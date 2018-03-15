@@ -3,6 +3,10 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="40" green="40" id="darkGray" palette="1" red="40" type="palette"/>
+    </Property>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -24,96 +28,82 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="AHexa" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="UnoDeci" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DosDeci" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="TresDeci" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="BHexa" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CuatroDeci" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CincoDeci" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="SeisDeci" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                  <Component id="Info" min="-2" pref="367" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="NumeroVisual" alignment="0" pref="331" max="32767" attributes="0"/>
+                          <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton2" min="-2" pref="81" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton4" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="TransBin" alignment="1" max="32767" attributes="0"/>
+                              <Component id="TransOcta" alignment="1" max="32767" attributes="0"/>
+                              <Component id="TransDeci" alignment="1" pref="71" max="32767" attributes="0"/>
+                              <Component id="TransHexa" alignment="1" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jButton1" min="-2" pref="81" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="80" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="FHexa" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="EHexa" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="CHexa" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="SieteDeci" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="OchoDeci" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="DHexa" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="EHexa" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="CHexa" linkSize="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="SieteDeci" linkSize="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="AHexa" linkSize="2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="UnoDeci" linkSize="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="BHexa" linkSize="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="CuatroDeci" linkSize="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="DosDeci" linkSize="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="TresDeci" linkSize="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="CincoDeci" linkSize="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="SeisDeci" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="OchoDeci" linkSize="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="NueveDeci" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="FHexa" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="CeroDeci" linkSize="2" min="-2" pref="42" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="Suma" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="Resta" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="Division" linkSize="2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Multiplicacion" linkSize="2" min="-2" pref="39" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NueveDeci" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="DHexa" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="CeroDeci" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                              <Component id="Igual" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="Multiplicacion" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="Division" min="-2" pref="62" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="Suma" min="-2" pref="60" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="Resta" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="Igual" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-          </Group>
-          <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Component id="Info" min="-2" pref="367" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="NumeroVisual" min="-2" pref="367" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -123,20 +113,21 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="Info" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="NumeroVisual" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="AHexa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="UnoDeci" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="DosDeci" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="TresDeci" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TransBin" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -144,57 +135,40 @@
                           <Component id="CuatroDeci" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="CincoDeci" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SeisDeci" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TransOcta" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="23" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="CHexa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SieteDeci" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="OchoDeci" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="NueveDeci" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TransDeci" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="DHexa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CeroDeci" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EHexa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TransHexa" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="EHexa" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="FHexa" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Suma" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Resta" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="Suma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Resta" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Division" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Multiplicacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Division" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CeroDeci" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="FHexa" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Igual" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="Igual" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -297,6 +271,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Info">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="MingLiU_HKSCS-ExtB" size="18" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Calculadora: "/>
       </Properties>
     </Component>
@@ -325,27 +302,36 @@
         <Property name="text" type="java.lang.String" value="="/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="TransBin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Binario"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransBinActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="TransDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="Decimal"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransDeciActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="TransOcta">
       <Properties>
         <Property name="text" type="java.lang.String" value="Octal"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransOctaActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="TransHexa">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hexadecimal"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransHexaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

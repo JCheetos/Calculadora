@@ -1,21 +1,32 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Cronometro.java
+ * Copyright (c) 2018 Valentina Tobo 20172020063, Camilo Torres 20172020067, Johan Mendez 20172020070
  */
 package calculadora.Primary;
 
+import calculadora.logica.Calculadora;
+
 /**
+ * La clase GUIPrim permite inicializar el objeto Calculadora y variables
+ * boolean para controlar la conversion de los numeros entre sistemas numericos
  *
- * @author Cheetos
+ * @author Valentina Uscategui Tobo - 20172020063
+ * @author Camilo Torres Rodriguez - 20172020067
+ * @author Johan Mendez Vega - 20172020070
  */
 public class GUIPrim extends javax.swing.JFrame {
 
+    Calculadora calcu;
+
     /**
-     * Creates new form GUIPrim
+     * Esta clase sirve para darle un valor a las variables 
+     * Esta clase ejecuta las condiciones en segundo plano que haran
+     * conversion entre unidades
      */
     public GUIPrim() {
         initComponents();
+        calcu = new Calculadora();
+        
     }
 
     /**
@@ -51,12 +62,14 @@ public class GUIPrim extends javax.swing.JFrame {
         Multiplicacion = new javax.swing.JButton();
         Division = new javax.swing.JButton();
         Igual = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        TransBin = new javax.swing.JButton();
+        TransDeci = new javax.swing.JButton();
+        TransOcta = new javax.swing.JButton();
+        TransHexa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setForeground(java.awt.Color.darkGray);
+        setResizable(false);
 
         AHexa.setText("A");
         AHexa.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +113,7 @@ public class GUIPrim extends javax.swing.JFrame {
         NumeroVisual.setText("0");
         NumeroVisual.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        Info.setFont(new java.awt.Font("MingLiU_HKSCS-ExtB", 1, 18)); // NOI18N
         Info.setText("Calculadora: ");
 
         Suma.setText("+");
@@ -112,16 +126,31 @@ public class GUIPrim extends javax.swing.JFrame {
 
         Igual.setText("=");
 
-        jButton1.setText("Binario");
-
-        jButton2.setText("Decimal");
-
-        jButton3.setText("Octal");
-
-        jButton4.setText("Hexadecimal");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        TransBin.setText("Binario");
+        TransBin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                TransBinActionPerformed(evt);
+            }
+        });
+
+        TransDeci.setText("Decimal");
+        TransDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TransDeciActionPerformed(evt);
+            }
+        });
+
+        TransOcta.setText("Octal");
+        TransOcta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TransOctaActionPerformed(evt);
+            }
+        });
+
+        TransHexa.setText("Hexadecimal");
+        TransHexa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TransHexaActionPerformed(evt);
             }
         });
 
@@ -130,140 +159,121 @@ public class GUIPrim extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(AHexa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(UnoDeci)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DosDeci)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TresDeci))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BHexa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CuatroDeci)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CincoDeci)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SeisDeci)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FHexa, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EHexa, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(CHexa)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(SieteDeci)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(OchoDeci)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NueveDeci)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(DHexa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(CeroDeci)
-                                .addGap(93, 93, 93)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Multiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Division, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Suma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Resta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(Igual, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)))
-                .addGap(22, 22, 22))
-            .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(Info, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(NumeroVisual, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Info, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(NumeroVisual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(TransBin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TransOcta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TransDeci, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                                .addComponent(TransHexa, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(DHexa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(EHexa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(CHexa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(SieteDeci))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(AHexa)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(UnoDeci))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(BHexa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(CuatroDeci)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(DosDeci, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(TresDeci, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(CincoDeci, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(SeisDeci, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(OchoDeci, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(NueveDeci, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(FHexa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(CeroDeci, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(14, 14, 14)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(Suma, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Resta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Division)
+                                        .addComponent(Multiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AHexa, BHexa, CHexa, CeroDeci, CincoDeci, CuatroDeci, DHexa, Division, DosDeci, EHexa, FHexa, Multiplicacion, NueveDeci, OchoDeci, Resta, SeisDeci, SieteDeci, Suma, TresDeci, UnoDeci});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap()
                 .addComponent(Info)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(NumeroVisual)
-                .addGap(32, 32, 32)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AHexa)
                             .addComponent(UnoDeci)
                             .addComponent(DosDeci)
-                            .addComponent(TresDeci))
+                            .addComponent(TresDeci)
+                            .addComponent(TransBin))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BHexa)
                             .addComponent(CuatroDeci)
                             .addComponent(CincoDeci)
-                            .addComponent(SeisDeci))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
-                            .addComponent(jButton1))
+                            .addComponent(SeisDeci)
+                            .addComponent(TransOcta))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CHexa)
                             .addComponent(SieteDeci)
                             .addComponent(OchoDeci)
-                            .addComponent(NueveDeci))
+                            .addComponent(NueveDeci)
+                            .addComponent(TransDeci))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(DHexa)
-                            .addComponent(CeroDeci))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(EHexa)
+                            .addComponent(EHexa)
+                            .addComponent(TransHexa)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Suma)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FHexa)
-                        .addGap(58, 58, 58))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Suma)
-                            .addComponent(Resta))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Resta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Division)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Multiplicacion)
-                            .addComponent(Division))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(32, 32, 32))))
+                            .addComponent(CeroDeci)
+                            .addComponent(FHexa))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Igual)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -273,9 +283,73 @@ public class GUIPrim extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AHexaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void TransHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransHexaActionPerformed
+        AHexa.setVisible(true);
+        BHexa.setVisible(true);
+        CHexa.setVisible(true);
+        DHexa.setVisible(true);
+        EHexa.setVisible(true);
+        FHexa.setVisible(true);
+        DosDeci.setVisible(true);
+        TresDeci.setVisible(true);
+        CuatroDeci.setVisible(true);
+        CincoDeci.setVisible(true);
+        SeisDeci.setVisible(true);
+        SieteDeci.setVisible(true);
+        OchoDeci.setVisible(true);
+        NueveDeci.setVisible(true);
+    }//GEN-LAST:event_TransHexaActionPerformed
+
+    private void TransBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransBinActionPerformed
+        AHexa.setVisible(false);
+        BHexa.setVisible(false);
+        CHexa.setVisible(false);
+        DHexa.setVisible(false);
+        EHexa.setVisible(false);
+        FHexa.setVisible(false);
+        DosDeci.setVisible(false);
+        TresDeci.setVisible(false);
+        CuatroDeci.setVisible(false);
+        CincoDeci.setVisible(false);
+        SeisDeci.setVisible(false);
+        SieteDeci.setVisible(false);
+        OchoDeci.setVisible(false);
+        NueveDeci.setVisible(false);
+    }//GEN-LAST:event_TransBinActionPerformed
+
+    private void TransOctaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransOctaActionPerformed
+        AHexa.setVisible(false);
+        BHexa.setVisible(false);
+        CHexa.setVisible(false);
+        DHexa.setVisible(false);
+        EHexa.setVisible(false);
+        FHexa.setVisible(false);
+        DosDeci.setVisible(true);
+        TresDeci.setVisible(true);
+        CuatroDeci.setVisible(true);
+        CincoDeci.setVisible(true);
+        SeisDeci.setVisible(true);
+        SieteDeci.setVisible(true);
+        OchoDeci.setVisible(false);
+        NueveDeci.setVisible(false);
+    }//GEN-LAST:event_TransOctaActionPerformed
+
+    private void TransDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransDeciActionPerformed
+        AHexa.setVisible(false);
+        BHexa.setVisible(false);
+        CHexa.setVisible(false);
+        DHexa.setVisible(false);
+        EHexa.setVisible(false);
+        FHexa.setVisible(false);
+        DosDeci.setVisible(true);
+        TresDeci.setVisible(true);
+        CuatroDeci.setVisible(true);
+        CincoDeci.setVisible(true);
+        SeisDeci.setVisible(true);
+        SieteDeci.setVisible(true);
+        OchoDeci.setVisible(true);
+        NueveDeci.setVisible(true);
+    }//GEN-LAST:event_TransDeciActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,6 +380,7 @@ public class GUIPrim extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new GUIPrim().setVisible(true);
             }
@@ -334,12 +409,12 @@ public class GUIPrim extends javax.swing.JFrame {
     private javax.swing.JButton SeisDeci;
     private javax.swing.JButton SieteDeci;
     private javax.swing.JButton Suma;
+    private javax.swing.JButton TransBin;
+    private javax.swing.JButton TransDeci;
+    private javax.swing.JButton TransHexa;
+    private javax.swing.JButton TransOcta;
     private javax.swing.JButton TresDeci;
     private javax.swing.JButton UnoDeci;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
