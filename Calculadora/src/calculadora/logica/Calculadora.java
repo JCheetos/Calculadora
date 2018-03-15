@@ -15,14 +15,14 @@ package calculadora.logica;
 public class Calculadora {
     private String numeroVisualizado;
     private BasesNumericas binario;
-    private int decimal;
+    private BasesNumericas decimal;
     private BasesNumericas octal;
     private BasesNumericas hexagesimal;
     
     public Calculadora() {
         numeroVisualizado = "0";
         binario = new BasesNumericas(2);
-        decimal = 0;
+        decimal = new BasesNumericas(10);
         octal = new BasesNumericas(8);
         hexagesimal = new BasesNumericas(16);
     }
@@ -48,7 +48,7 @@ public class Calculadora {
      * tipo Calculadora del cual es llamada
      * @return decimal
      */
-    public int getDecimal() {
+    public BasesNumericas getDecimal() {
         return decimal;
     }
 
@@ -57,7 +57,7 @@ public class Calculadora {
      * Calculadora del cual es llamado
      * @param decimal
      */
-    public void setDecimal(int decimal) {
+    public void setDecimal(BasesNumericas decimal) {
         this.decimal = decimal;
     }
 
@@ -96,18 +96,54 @@ public class Calculadora {
     public void setHexagesimal(BasesNumericas hexagesimal) {
         this.hexagesimal = hexagesimal;
     }
-    public int recibirNumero(String numeroVisualizado, int base) {
-        if(base==1){
-            
+    public String actualizarNumero(String numeroVisualizado, int base) {
+        switch (base) {
+            case 1:
+                numeroVisualizado = binario.obtenerValorFormateado(numeroVisualizado, base);
+                break;
+            case 2:
+                numeroVisualizado = decimal.obtenerValorFormateado(numeroVisualizado, base);
+                break;
+            case 3:
+                numeroVisualizado = octal.obtenerValorFormateado(numeroVisualizado, base);
+                break;
+            default:
+                numeroVisualizado = hexagesimal.obtenerValorFormateado(numeroVisualizado, base);
+                break;
         }
-        else if(base==2){
-            
+        return numeroVisualizado;
+    }
+    public int recibirNumero(String numeroVisualizado, int base,int numero) {
+        switch (base) {
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            default:
+                
+                break;
         }
-        else if(base==3){
-            
-        }
-        else{
-            
+        return numeroVisualizado;
+    }
+    public String NumeroEnPantalla(String numeroVisualizado, int base,int numero) {
+        switch (base) {
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            default:
+                
+                break;
         }
         return numeroVisualizado;
     }

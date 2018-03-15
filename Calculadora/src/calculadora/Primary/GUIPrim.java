@@ -27,7 +27,6 @@ public class GUIPrim extends javax.swing.JFrame {
         initComponents();
         calcu = new Calculadora();
         base = 2;
-        
     }
 
     /**
@@ -356,7 +355,8 @@ public class GUIPrim extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AHexaActionPerformed
-        // TODO add your handling code here:
+                NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,10));
+
     }//GEN-LAST:event_AHexaActionPerformed
 
     private void TransHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransHexaActionPerformed
@@ -375,6 +375,7 @@ public class GUIPrim extends javax.swing.JFrame {
         OchoDeci.setVisible(true);
         NueveDeci.setVisible(true);
         base = 4;
+        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), base));
     }//GEN-LAST:event_TransHexaActionPerformed
 
     private void TransBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransBinActionPerformed
@@ -393,6 +394,7 @@ public class GUIPrim extends javax.swing.JFrame {
         OchoDeci.setVisible(false);
         NueveDeci.setVisible(false);
         base = 1;
+        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), base));
     }//GEN-LAST:event_TransBinActionPerformed
 
     private void TransOctaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransOctaActionPerformed
@@ -411,6 +413,7 @@ public class GUIPrim extends javax.swing.JFrame {
         OchoDeci.setVisible(false);
         NueveDeci.setVisible(false);
         base = 3;
+        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), base));
     }//GEN-LAST:event_TransOctaActionPerformed
 
     private void TransDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransDeciActionPerformed
@@ -429,66 +432,82 @@ public class GUIPrim extends javax.swing.JFrame {
         OchoDeci.setVisible(true);
         NueveDeci.setVisible(true);
         base = 2;
+        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), base));
     }//GEN-LAST:event_TransDeciActionPerformed
 
     private void UnoDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnoDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,1));
+        
     }//GEN-LAST:event_UnoDeciActionPerformed
 
     private void DosDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DosDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,2));
+        
     }//GEN-LAST:event_DosDeciActionPerformed
 
     private void TresDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TresDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,3));
+        
     }//GEN-LAST:event_TresDeciActionPerformed
 
     private void CuatroDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatroDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,4));
+        
     }//GEN-LAST:event_CuatroDeciActionPerformed
 
     private void CincoDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CincoDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,5));
+        
     }//GEN-LAST:event_CincoDeciActionPerformed
 
     private void SeisDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeisDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,6));
+        
     }//GEN-LAST:event_SeisDeciActionPerformed
 
     private void SieteDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SieteDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,7));
+        
     }//GEN-LAST:event_SieteDeciActionPerformed
 
     private void OchoDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OchoDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,8));
+        
     }//GEN-LAST:event_OchoDeciActionPerformed
 
     private void NueveDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NueveDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,9));
+        
     }//GEN-LAST:event_NueveDeciActionPerformed
 
     private void CeroDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CeroDeciActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,0));
+        
     }//GEN-LAST:event_CeroDeciActionPerformed
 
     private void BHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BHexaActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,11));
+        
     }//GEN-LAST:event_BHexaActionPerformed
 
     private void CHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHexaActionPerformed
-        // TODO add your handling code here:
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,12));
+        
     }//GEN-LAST:event_CHexaActionPerformed
 
     private void DHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DHexaActionPerformed
-        // TODO add your handling code here:
+                NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,13));
+
     }//GEN-LAST:event_DHexaActionPerformed
 
     private void EHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EHexaActionPerformed
-        // TODO add your handling code here:
+                NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,14));
+
     }//GEN-LAST:event_EHexaActionPerformed
 
     private void FHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FHexaActionPerformed
-        // TODO add your handling code here:
+                NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),base,15));
+
     }//GEN-LAST:event_FHexaActionPerformed
 
     /**
