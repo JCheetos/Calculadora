@@ -27,21 +27,166 @@ public class GUIPrim extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BaseNumerica = new javax.swing.ButtonGroup();
+        AHexa = new javax.swing.JButton();
+        BHexa = new javax.swing.JButton();
+        CHexa = new javax.swing.JButton();
+        DHexa = new javax.swing.JButton();
+        EHexa = new javax.swing.JButton();
+        FHexa = new javax.swing.JButton();
+        UnoDeci = new javax.swing.JButton();
+        DosDeci = new javax.swing.JButton();
+        TresDeci = new javax.swing.JButton();
+        CuatroDeci = new javax.swing.JButton();
+        CincoDeci = new javax.swing.JButton();
+        SeisDeci = new javax.swing.JButton();
+        SieteDeci = new javax.swing.JButton();
+        OchoDeci = new javax.swing.JButton();
+        NueveDeci = new javax.swing.JButton();
+        CeroDeci = new javax.swing.JButton();
+        NumeroVisual = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        Info = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        AHexa.setText("A");
+        AHexa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AHexaActionPerformed(evt);
+            }
+        });
+
+        BHexa.setText("B");
+
+        CHexa.setText("C");
+
+        DHexa.setText("D");
+
+        EHexa.setText("E");
+
+        FHexa.setText("F");
+
+        UnoDeci.setText("1");
+
+        DosDeci.setText("2");
+
+        TresDeci.setText("3");
+
+        CuatroDeci.setText("4");
+
+        CincoDeci.setText("5");
+
+        SeisDeci.setText("6");
+
+        SieteDeci.setText("7");
+
+        OchoDeci.setText("8");
+
+        NueveDeci.setText("9");
+
+        CeroDeci.setText("0");
+
+        NumeroVisual.setFont(new java.awt.Font("Verdana", 0, 48)); // NOI18N
+        NumeroVisual.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        NumeroVisual.setText("0");
+        NumeroVisual.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        Info.setText("Calculadora: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AHexa)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(CHexa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CuatroDeci)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CincoDeci)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SeisDeci))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BHexa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(UnoDeci)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(DosDeci)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TresDeci))
+                            .addComponent(FHexa)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(DHexa)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(SieteDeci))
+                                    .addComponent(EHexa))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CeroDeci)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(OchoDeci)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NueveDeci))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(NumeroVisual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Info, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE))))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(Info)
+                .addGap(32, 32, 32)
+                .addComponent(NumeroVisual)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(AHexa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BHexa)
+                    .addComponent(UnoDeci)
+                    .addComponent(DosDeci)
+                    .addComponent(TresDeci))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CHexa)
+                    .addComponent(CuatroDeci)
+                    .addComponent(CincoDeci)
+                    .addComponent(SeisDeci))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DHexa)
+                    .addComponent(SieteDeci)
+                    .addComponent(OchoDeci)
+                    .addComponent(NueveDeci))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EHexa)
+                    .addComponent(CeroDeci))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FHexa)
+                .addGap(58, 58, 58))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AHexaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AHexaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +224,25 @@ public class GUIPrim extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AHexa;
+    private javax.swing.JButton BHexa;
+    private javax.swing.ButtonGroup BaseNumerica;
+    private javax.swing.JButton CHexa;
+    private javax.swing.JButton CeroDeci;
+    private javax.swing.JButton CincoDeci;
+    private javax.swing.JButton CuatroDeci;
+    private javax.swing.JButton DHexa;
+    private javax.swing.JButton DosDeci;
+    private javax.swing.JButton EHexa;
+    private javax.swing.JButton FHexa;
+    private javax.swing.JLabel Info;
+    private javax.swing.JButton NueveDeci;
+    private javax.swing.JLabel NumeroVisual;
+    private javax.swing.JButton OchoDeci;
+    private javax.swing.JButton SeisDeci;
+    private javax.swing.JButton SieteDeci;
+    private javax.swing.JButton TresDeci;
+    private javax.swing.JButton UnoDeci;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
