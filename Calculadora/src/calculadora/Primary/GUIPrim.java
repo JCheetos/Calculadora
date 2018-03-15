@@ -15,7 +15,8 @@ import calculadora.logica.Calculadora;
  * @author Johan Mendez Vega - 20172020070
  */
 public class GUIPrim extends javax.swing.JFrame {
-    int base;
+    int baseantigua;
+    int basenueva;
     Calculadora calcu;
 
     /**
@@ -26,7 +27,8 @@ public class GUIPrim extends javax.swing.JFrame {
     public GUIPrim() {
         initComponents();
         calcu = new Calculadora();
-        base = 2;
+        baseantigua = 4;
+        basenueva = 0;
     }
 
     /**
@@ -389,8 +391,9 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(true);
         OchoDeci.setVisible(true);
         NueveDeci.setVisible(true);
-        base = 4;
-        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), base));
+        basenueva = 4;
+        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), baseantigua, basenueva));
+        baseantigua = basenueva;
     }//GEN-LAST:event_TransHexaActionPerformed
 
     private void TransBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransBinActionPerformed
@@ -408,8 +411,9 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(false);
         OchoDeci.setVisible(false);
         NueveDeci.setVisible(false);
-        base = 1;
-        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), base));
+        basenueva = 1;
+        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), baseantigua, basenueva));
+        baseantigua = basenueva;
     }//GEN-LAST:event_TransBinActionPerformed
 
     private void TransOctaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransOctaActionPerformed
@@ -427,8 +431,9 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(true);
         OchoDeci.setVisible(false);
         NueveDeci.setVisible(false);
-        base = 3;
-        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), base));
+        basenueva = 3;
+        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), baseantigua, basenueva));
+        baseantigua = basenueva;
     }//GEN-LAST:event_TransOctaActionPerformed
 
     private void TransDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransDeciActionPerformed
@@ -446,8 +451,9 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(true);
         OchoDeci.setVisible(true);
         NueveDeci.setVisible(true);
-        base = 2;
-        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), base));
+        basenueva = 2;
+        NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), baseantigua, basenueva));
+        baseantigua = basenueva;
     }//GEN-LAST:event_TransDeciActionPerformed
 
     private void UnoDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnoDeciActionPerformed

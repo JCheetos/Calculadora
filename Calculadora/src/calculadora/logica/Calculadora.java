@@ -109,24 +109,20 @@ public class Calculadora {
         this.hexagesimal = hexagesimal;
     }
 
-    public String actualizarNumero(String numeroVisualizado, int base) {
-
-        switch (base) {
+    public String actualizarNumero(String numeroVisualizado, int basea, int basen) {
+        numeroGuardado = decimalizar(numeroVisualizado, basea);
+        switch (basen) {
             case 1:
-                numeroGuardado = decimalizar(numeroVisualizado, base);
-                numeroVisualizado = binario.obtenerValorFormateado(numeroVisualizado, base);
+                numeroVisualizado = binario.obtenerValorFormateado(numeroVisualizado, basen);
                 break;
             case 2:
-                numeroGuardado = decimalizar(numeroVisualizado, base);
-                numeroVisualizado = decimal.obtenerValorFormateado(numeroVisualizado, base);
+                numeroVisualizado = decimal.obtenerValorFormateado(numeroVisualizado, basen);
                 break;
             case 3:
-                numeroGuardado = decimalizar(numeroVisualizado, base);
-                numeroVisualizado = octal.obtenerValorFormateado(numeroVisualizado, base);
+                numeroVisualizado = octal.obtenerValorFormateado(numeroVisualizado, basen);
                 break;
             default:
-                numeroGuardado = decimalizar(numeroVisualizado, base);
-                numeroVisualizado = hexagesimal.obtenerValorFormateado(numeroVisualizado, base);
+                numeroVisualizado = hexagesimal.obtenerValorFormateado(numeroVisualizado, basen);
                 break;
         }
         return numeroVisualizado;
@@ -187,19 +183,19 @@ public class Calculadora {
         for (int i = 0; i < arrayChar.length; i++) {
             switch (base) {
                 case 1:
-                    exponente = arrayChar.length - i;
+                    exponente = arrayChar.length - (i+1);
                     numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(2, exponente));
                     break;
                 case 2:
-                    exponente = arrayChar.length - i;
+                    exponente = arrayChar.length - (i+1);
                     numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(10, exponente));
                     break;
                 case 3:
-                    exponente = arrayChar.length - i;
+                    exponente = arrayChar.length - (i+1);
                     numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(8, exponente));
                     break;
                 default:
-                    exponente = arrayChar.length - i;
+                    exponente = arrayChar.length - (i+1);
                     switch (arrayChar[i]) {
                         case 'A':
                             numerodecimal = numerodecimal + (10 * (int) Math.pow(16, exponente));
@@ -218,6 +214,9 @@ public class Calculadora {
                             break;
                         case 'F':
                             numerodecimal = numerodecimal + (15 * (int) Math.pow(16, exponente));
+                            break;
+                        default:
+                            numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(16, exponente));
                             break;
                     }
                     break;
