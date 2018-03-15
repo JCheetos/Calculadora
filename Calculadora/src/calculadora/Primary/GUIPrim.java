@@ -73,6 +73,7 @@ public class GUIPrim extends javax.swing.JFrame {
         TransOcta = new javax.swing.JButton();
         TransHexa = new javax.swing.JButton();
         LimpiarNumeros = new javax.swing.JButton();
+        Signo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(java.awt.Color.darkGray);
@@ -268,6 +269,8 @@ public class GUIPrim extends javax.swing.JFrame {
             }
         });
 
+        Signo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -276,9 +279,7 @@ public class GUIPrim extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Info, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(NumeroVisual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(TransBin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -331,7 +332,11 @@ public class GUIPrim extends javax.swing.JFrame {
                                     .addComponent(Resta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Division)
                                     .addComponent(Multiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(Igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(Igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Signo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NumeroVisual, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 25, Short.MAX_VALUE))
         );
 
@@ -342,9 +347,11 @@ public class GUIPrim extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Info)
-                .addGap(31, 31, 31)
-                .addComponent(NumeroVisual)
-                .addGap(40, 40, 40)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(NumeroVisual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Signo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,6 +588,7 @@ public class GUIPrim extends javax.swing.JFrame {
                 NumeroVisual.setText(NumeroVisual.getText());
                 break;
         }
+        Signo.setText("=");
     }//GEN-LAST:event_IgualActionPerformed
 
     private void LimpiarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarNumerosActionPerformed
@@ -604,29 +612,34 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(true);
         OchoDeci.setVisible(true);
         NueveDeci.setVisible(true);
+        Signo.setText("");
     }//GEN-LAST:event_LimpiarNumerosActionPerformed
 
     private void SumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumaActionPerformed
         numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
         NumeroVisual.setText("");
+        Signo.setText("+");
         operacion = 1;
     }//GEN-LAST:event_SumaActionPerformed
 
     private void RestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestaActionPerformed
         numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
         NumeroVisual.setText("");
+        Signo.setText("-");
         operacion = 2;
     }//GEN-LAST:event_RestaActionPerformed
         
     private void DivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisionActionPerformed
         numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
         NumeroVisual.setText("");
+        Signo.setText("/");
         operacion = 3;
     }//GEN-LAST:event_DivisionActionPerformed
 
     private void MultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiplicacionActionPerformed
         numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
         NumeroVisual.setText("");
+        Signo.setText("X");
         operacion = 4;
     }//GEN-LAST:event_MultiplicacionActionPerformed
 
@@ -688,6 +701,7 @@ public class GUIPrim extends javax.swing.JFrame {
     private javax.swing.JButton Resta;
     private javax.swing.JButton SeisDeci;
     private javax.swing.JButton SieteDeci;
+    private javax.swing.JLabel Signo;
     private javax.swing.JButton Suma;
     private javax.swing.JButton TransBin;
     private javax.swing.JButton TransDeci;
