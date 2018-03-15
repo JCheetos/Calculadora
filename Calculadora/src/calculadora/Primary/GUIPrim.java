@@ -15,7 +15,7 @@ import calculadora.logica.Calculadora;
  * @author Johan Mendez Vega - 20172020070
  */
 public class GUIPrim extends javax.swing.JFrame {
-
+    int base;
     Calculadora calcu;
 
     /**
@@ -26,6 +26,7 @@ public class GUIPrim extends javax.swing.JFrame {
     public GUIPrim() {
         initComponents();
         calcu = new Calculadora();
+        base = 2;
         
     }
 
@@ -79,34 +80,109 @@ public class GUIPrim extends javax.swing.JFrame {
         });
 
         BHexa.setText("B");
+        BHexa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BHexaActionPerformed(evt);
+            }
+        });
 
         CHexa.setText("C");
+        CHexa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHexaActionPerformed(evt);
+            }
+        });
 
         DHexa.setText("D");
+        DHexa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DHexaActionPerformed(evt);
+            }
+        });
 
         EHexa.setText("E");
+        EHexa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EHexaActionPerformed(evt);
+            }
+        });
 
         FHexa.setText("F");
+        FHexa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FHexaActionPerformed(evt);
+            }
+        });
 
         UnoDeci.setText("1");
+        UnoDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UnoDeciActionPerformed(evt);
+            }
+        });
 
         DosDeci.setText("2");
+        DosDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DosDeciActionPerformed(evt);
+            }
+        });
 
         TresDeci.setText("3");
+        TresDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TresDeciActionPerformed(evt);
+            }
+        });
 
         CuatroDeci.setText("4");
+        CuatroDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CuatroDeciActionPerformed(evt);
+            }
+        });
 
         CincoDeci.setText("5");
+        CincoDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CincoDeciActionPerformed(evt);
+            }
+        });
 
         SeisDeci.setText("6");
+        SeisDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SeisDeciActionPerformed(evt);
+            }
+        });
 
         SieteDeci.setText("7");
+        SieteDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SieteDeciActionPerformed(evt);
+            }
+        });
 
         OchoDeci.setText("8");
+        OchoDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OchoDeciActionPerformed(evt);
+            }
+        });
 
         NueveDeci.setText("9");
+        NueveDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NueveDeciActionPerformed(evt);
+            }
+        });
 
         CeroDeci.setText("0");
+        CeroDeci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CeroDeciActionPerformed(evt);
+            }
+        });
 
         NumeroVisual.setFont(new java.awt.Font("Verdana", 0, 48)); // NOI18N
         NumeroVisual.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -298,6 +374,7 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(true);
         OchoDeci.setVisible(true);
         NueveDeci.setVisible(true);
+        base = 4;
     }//GEN-LAST:event_TransHexaActionPerformed
 
     private void TransBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransBinActionPerformed
@@ -315,6 +392,7 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(false);
         OchoDeci.setVisible(false);
         NueveDeci.setVisible(false);
+        base = 1;
     }//GEN-LAST:event_TransBinActionPerformed
 
     private void TransOctaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransOctaActionPerformed
@@ -332,6 +410,7 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(true);
         OchoDeci.setVisible(false);
         NueveDeci.setVisible(false);
+        base = 3;
     }//GEN-LAST:event_TransOctaActionPerformed
 
     private void TransDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransDeciActionPerformed
@@ -349,7 +428,68 @@ public class GUIPrim extends javax.swing.JFrame {
         SieteDeci.setVisible(true);
         OchoDeci.setVisible(true);
         NueveDeci.setVisible(true);
+        base = 2;
     }//GEN-LAST:event_TransDeciActionPerformed
+
+    private void UnoDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnoDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UnoDeciActionPerformed
+
+    private void DosDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DosDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DosDeciActionPerformed
+
+    private void TresDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TresDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TresDeciActionPerformed
+
+    private void CuatroDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatroDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CuatroDeciActionPerformed
+
+    private void CincoDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CincoDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CincoDeciActionPerformed
+
+    private void SeisDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeisDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SeisDeciActionPerformed
+
+    private void SieteDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SieteDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SieteDeciActionPerformed
+
+    private void OchoDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OchoDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OchoDeciActionPerformed
+
+    private void NueveDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NueveDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NueveDeciActionPerformed
+
+    private void CeroDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CeroDeciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CeroDeciActionPerformed
+
+    private void BHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BHexaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BHexaActionPerformed
+
+    private void CHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHexaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CHexaActionPerformed
+
+    private void DHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DHexaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DHexaActionPerformed
+
+    private void EHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EHexaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EHexaActionPerformed
+
+    private void FHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FHexaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FHexaActionPerformed
 
     /**
      * @param args the command line arguments

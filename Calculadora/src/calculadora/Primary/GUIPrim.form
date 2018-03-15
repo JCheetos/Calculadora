@@ -186,76 +186,121 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="B"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BHexaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CHexa">
       <Properties>
         <Property name="text" type="java.lang.String" value="C"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CHexaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="DHexa">
       <Properties>
         <Property name="text" type="java.lang.String" value="D"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DHexaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="EHexa">
       <Properties>
         <Property name="text" type="java.lang.String" value="E"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EHexaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="FHexa">
       <Properties>
         <Property name="text" type="java.lang.String" value="F"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FHexaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="UnoDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UnoDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="DosDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DosDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="TresDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TresDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CuatroDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="4"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CuatroDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CincoDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="5"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CincoDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="SeisDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="6"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SeisDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="SieteDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="7"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SieteDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="OchoDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="8"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OchoDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="NueveDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="9"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NueveDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CeroDeci">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CeroDeciActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="NumeroVisual">
       <Properties>

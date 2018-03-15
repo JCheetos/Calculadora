@@ -13,12 +13,14 @@ package calculadora.logica;
  * @author Johan Mendez Vega - 20172020070
  */
 public class Calculadora {
+    private String numeroVisualizado;
     private BasesNumericas binario;
     private int decimal;
     private BasesNumericas octal;
     private BasesNumericas hexagesimal;
     
     public Calculadora() {
+        numeroVisualizado = "0";
         binario = new BasesNumericas(2);
         decimal = 0;
         octal = new BasesNumericas(8);
@@ -93,6 +95,21 @@ public class Calculadora {
      */
     public void setHexagesimal(BasesNumericas hexagesimal) {
         this.hexagesimal = hexagesimal;
+    }
+    public int recibirNumero(String numeroVisualizado, int base) {
+        if(base==1){
+            
+        }
+        else if(base==2){
+            
+        }
+        else if(base==3){
+            
+        }
+        else{
+            
+        }
+        return numeroVisualizado;
     }
 }
 
