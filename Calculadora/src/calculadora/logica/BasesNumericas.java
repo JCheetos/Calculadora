@@ -24,9 +24,15 @@ public class BasesNumericas {
      */
     public BasesNumericas(int tope) {
         this.tope = tope;
-        for (int i=0; i<10; i++){
-            this.valor[i] = 0;
-        }
+        this.valor[0] = 0;
+        this.valor[1] = 0;
+        this.valor[3] = 0;
+        this.valor[4] = 0;
+        this.valor[5] = 0;
+        this.valor[6] = 0;
+        this.valor[7] = 0;
+        this.valor[8] = 0;
+        this.valor[9] = 0;
     }
 
     /**
@@ -75,6 +81,7 @@ public class BasesNumericas {
      * visualizacion del ususario
      *
      * @param numeroVisualizado
+     * @param base
      * @return ValorFormateado
      */
     public String obtenerValorFormateado(String numeroVisualizado, int base) {
@@ -128,5 +135,28 @@ public class BasesNumericas {
         if (valor < 0) {
             valor = tope - 1;
         }
+    }
+    public int decimalizar(String numeroVisualizado, int base) {
+        int numerodecimal;
+        numerodecimal = 0;
+        char[] arrayChar = numeroVisualizado.toCharArray();
+        retroceder();
+        for(int i=0; i<arrayChar.length; i++){
+            switch (base) {
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            default:
+                
+                break;
+        }
+        }
+        return numerodecimal;
     }
 }
