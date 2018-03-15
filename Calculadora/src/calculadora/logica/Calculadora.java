@@ -23,6 +23,7 @@ public class Calculadora {
 
     public Calculadora() {
         numeroVisualizado = "0";
+        numeroGuardado = 0;
         binario = new BasesNumericas(2);
         decimal = new BasesNumericas(10);
         octal = new BasesNumericas(8);
@@ -150,12 +151,12 @@ public class Calculadora {
     }
 
     public String NumeroEnPantalla(String numeroVisualizado, int numero) {
-        
-        if (numeroVisualizado=="0"){
-            numeroVisualizado="";
+
+        if (numeroVisualizado == "0") {
+            numeroVisualizado = "";
         }
         char[] arrayChar = numeroVisualizado.toCharArray();
-        if (arrayChar.length==10){
+        if (arrayChar.length == 10) {
             return numeroVisualizado;
         }
         if ((numero > -1) & (numero < 10)) {
@@ -181,21 +182,18 @@ public class Calculadora {
         numerodecimal = 0;
         char[] arrayChar = numeroVisualizado.toCharArray();
         for (int i = 0; i < arrayChar.length; i++) {
+            exponente = arrayChar.length - (i + 1);
             switch (base) {
                 case 1:
-                    exponente = arrayChar.length - (i+1);
                     numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(2, exponente));
                     break;
                 case 2:
-                    exponente = arrayChar.length - (i+1);
                     numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(10, exponente));
                     break;
                 case 3:
-                    exponente = arrayChar.length - (i+1);
                     numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(8, exponente));
                     break;
-                default:
-                    exponente = arrayChar.length - (i+1);
+                case 4:
                     switch (arrayChar[i]) {
                         case 'A':
                             numerodecimal = numerodecimal + (10 * (int) Math.pow(16, exponente));
@@ -215,8 +213,34 @@ public class Calculadora {
                         case 'F':
                             numerodecimal = numerodecimal + (15 * (int) Math.pow(16, exponente));
                             break;
-                        default:
-                            numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(16, exponente));
+                        case '1':
+                            numerodecimal = numerodecimal + (1 * (int) Math.pow(16, exponente));
+                            break;
+                        case '2':
+                            numerodecimal = numerodecimal + (2 * (int) Math.pow(16, exponente));
+                            break;
+                        case '3':
+                            numerodecimal = numerodecimal + (3 * (int) Math.pow(16, exponente));
+                            break;
+                        case '4':
+                            numerodecimal = numerodecimal + (4 * (int) Math.pow(16, exponente));
+                            break;
+                        case '5':
+                            numerodecimal = numerodecimal + (5 * (int) Math.pow(16, exponente));
+                            break;
+                        case '6':
+                            numerodecimal = numerodecimal + (6 * (int) Math.pow(16, exponente));
+                            break;
+                        case '7':
+                            numerodecimal = numerodecimal + (7 * (int) Math.pow(16, exponente));
+                            break;
+                        case '8':
+                            numerodecimal = numerodecimal + (8 * (int) Math.pow(16, exponente));
+                            break;
+                        case '9':
+                            numerodecimal = numerodecimal + (9 * (int) Math.pow(16, exponente));
+                            break;
+                        case '0':
                             break;
                     }
                     break;

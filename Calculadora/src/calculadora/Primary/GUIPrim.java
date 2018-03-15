@@ -538,6 +538,7 @@ public class GUIPrim extends javax.swing.JFrame {
 
     private void LimpiarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarNumerosActionPerformed
         NumeroVisual.setText("0");
+        calcu = new Calculadora();
     }//GEN-LAST:event_LimpiarNumerosActionPerformed
 
     /**
