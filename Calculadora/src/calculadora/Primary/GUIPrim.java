@@ -396,7 +396,7 @@ public class GUIPrim extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AHexaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AHexaActionPerformed
-                NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),10));
+        NumeroVisual.setText(calcu.NumeroEnPantalla(NumeroVisual.getText(),10));
 
     }//GEN-LAST:event_AHexaActionPerformed
 
@@ -417,7 +417,7 @@ public class GUIPrim extends javax.swing.JFrame {
         NueveDeci.setVisible(true);
         basenueva = 4;
         NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), baseantigua, basenueva));
-        baseantigua = basenueva;
+        baseantigua = 4;
     }//GEN-LAST:event_TransHexaActionPerformed
 
     private void TransBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransBinActionPerformed
@@ -437,7 +437,7 @@ public class GUIPrim extends javax.swing.JFrame {
         NueveDeci.setVisible(false);
         basenueva = 1;
         NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), baseantigua, basenueva));
-        baseantigua = basenueva;
+        baseantigua = 1;
     }//GEN-LAST:event_TransBinActionPerformed
 
     private void TransOctaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransOctaActionPerformed
@@ -457,7 +457,7 @@ public class GUIPrim extends javax.swing.JFrame {
         NueveDeci.setVisible(false);
         basenueva = 3;
         NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), baseantigua, basenueva));
-        baseantigua = basenueva;
+        baseantigua = 3;
     }//GEN-LAST:event_TransOctaActionPerformed
 
     private void TransDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransDeciActionPerformed
@@ -477,7 +477,7 @@ public class GUIPrim extends javax.swing.JFrame {
         NueveDeci.setVisible(true);
         basenueva = 2;
         NumeroVisual.setText(calcu.actualizarNumero(NumeroVisual.getText(), baseantigua, basenueva));
-        baseantigua = basenueva;
+        baseantigua = 2;
     }//GEN-LAST:event_TransDeciActionPerformed
 
     private void UnoDeciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnoDeciActionPerformed
@@ -558,19 +558,27 @@ public class GUIPrim extends javax.swing.JFrame {
     private void IgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IgualActionPerformed
         switch(operacion){
             case 1:
-                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero+calcu.decimalizar(NumeroVisual.getText(), basenueva)), basenueva, basenueva));
+                numero=numero+(calcu.decimalizar(NumeroVisual.getText(), basenueva));
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero), 2, basenueva));
+                operacion=0;
                 break;
             case 2:
-                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero-calcu.decimalizar(NumeroVisual.getText(), basenueva)), basenueva, basenueva));
+                numero=numero-(calcu.decimalizar(NumeroVisual.getText(), basenueva));
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero), 2, basenueva));
+                operacion=0;
                 break;
             case 3:
-                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero/calcu.decimalizar(NumeroVisual.getText(), basenueva)), basenueva, basenueva));
+                numero=numero/(calcu.decimalizar(NumeroVisual.getText(), basenueva));
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero), 2, basenueva));
+                operacion=0;
                 break;
             case 4:
-                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero*calcu.decimalizar(NumeroVisual.getText(), basenueva)), basenueva, basenueva));
+                numero=numero*(calcu.decimalizar(NumeroVisual.getText(), basenueva));
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero), 2, basenueva));
+                operacion=0;
                 break;
             case 0:
-                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero), basenueva, basenueva));
+                NumeroVisual.setText(NumeroVisual.getText());
                 break;
         }
     }//GEN-LAST:event_IgualActionPerformed
@@ -582,29 +590,43 @@ public class GUIPrim extends javax.swing.JFrame {
         basenueva = 4; 
         numero = 0;
         operacion = 0;
+        AHexa.setVisible(true);
+        BHexa.setVisible(true);
+        CHexa.setVisible(true);
+        DHexa.setVisible(true);
+        EHexa.setVisible(true);
+        FHexa.setVisible(true);
+        DosDeci.setVisible(true);
+        TresDeci.setVisible(true);
+        CuatroDeci.setVisible(true);
+        CincoDeci.setVisible(true);
+        SeisDeci.setVisible(true);
+        SieteDeci.setVisible(true);
+        OchoDeci.setVisible(true);
+        NueveDeci.setVisible(true);
     }//GEN-LAST:event_LimpiarNumerosActionPerformed
 
     private void SumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumaActionPerformed
         numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
-        NumeroVisual.setText("0");
+        NumeroVisual.setText("");
         operacion = 1;
     }//GEN-LAST:event_SumaActionPerformed
 
     private void RestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestaActionPerformed
         numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
-        NumeroVisual.setText("0");
+        NumeroVisual.setText("");
         operacion = 2;
     }//GEN-LAST:event_RestaActionPerformed
         
     private void DivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisionActionPerformed
         numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
-        NumeroVisual.setText("0");
+        NumeroVisual.setText("");
         operacion = 3;
     }//GEN-LAST:event_DivisionActionPerformed
 
     private void MultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiplicacionActionPerformed
         numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
-        NumeroVisual.setText("0");
+        NumeroVisual.setText("");
         operacion = 4;
     }//GEN-LAST:event_MultiplicacionActionPerformed
 
