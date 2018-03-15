@@ -37,7 +37,7 @@ public class Calculadora {
             case 3:
                 numeroVisualizado = Integer.toOctalString(numeroGuardado);
                 break;
-            default:
+            case 4:
                 numeroVisualizado = Integer.toHexString(numeroGuardado);
                 break;
         }
@@ -204,7 +204,8 @@ public class Calculadora {
         return numerodecimal;
     }
 
-    public int obtenerValorFormateado(int numeroGuardado, int basen) {
+    public int obtenerValorFormateado(int numeroGuardado) {
+        numeroGuardado = decimalizar(numeroVisualizado, basea);
         int numerodecimal;
         int exponente;
         numerodecimal = 0;

@@ -17,6 +17,8 @@ import calculadora.logica.Calculadora;
 public class GUIPrim extends javax.swing.JFrame {
     int baseantigua;
     int basenueva;
+    int numero;
+    int operacion;
     Calculadora calcu;
 
     /**
@@ -28,7 +30,9 @@ public class GUIPrim extends javax.swing.JFrame {
         initComponents();
         calcu = new Calculadora();
         baseantigua = 4;
-        basenueva = 0;
+        basenueva = 4;
+        numero = 0;
+        operacion = 0;
     }
 
     /**
@@ -195,12 +199,32 @@ public class GUIPrim extends javax.swing.JFrame {
         Info.setText("Calculadora: ");
 
         Suma.setText("+");
+        Suma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SumaActionPerformed(evt);
+            }
+        });
 
         Resta.setText("-");
+        Resta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RestaActionPerformed(evt);
+            }
+        });
 
         Multiplicacion.setText("*");
+        Multiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MultiplicacionActionPerformed(evt);
+            }
+        });
 
         Division.setText("/");
+        Division.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DivisionActionPerformed(evt);
+            }
+        });
 
         Igual.setText("=");
         Igual.addActionListener(new java.awt.event.ActionListener() {
@@ -532,14 +556,57 @@ public class GUIPrim extends javax.swing.JFrame {
     }//GEN-LAST:event_FHexaActionPerformed
 
     private void IgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IgualActionPerformed
-        NumeroVisual.setText("0");
-        
+        switch(operacion){
+            case 1:
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero+calcu.decimalizar(NumeroVisual.getText(), basenueva)), basenueva, basenueva));
+                break;
+            case 2:
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero-calcu.decimalizar(NumeroVisual.getText(), basenueva)), basenueva, basenueva));
+                break;
+            case 3:
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero/calcu.decimalizar(NumeroVisual.getText(), basenueva)), basenueva, basenueva));
+                break;
+            case 4:
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero*calcu.decimalizar(NumeroVisual.getText(), basenueva)), basenueva, basenueva));
+                break;
+            case 0:
+                NumeroVisual.setText(calcu.actualizarNumero(String.valueOf(numero), basenueva, basenueva));
+                break;
+        }
     }//GEN-LAST:event_IgualActionPerformed
 
     private void LimpiarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarNumerosActionPerformed
         NumeroVisual.setText("0");
         calcu = new Calculadora();
+        baseantigua = 4;
+        basenueva = 4; 
+        numero = 0;
+        operacion = 0;
     }//GEN-LAST:event_LimpiarNumerosActionPerformed
+
+    private void SumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumaActionPerformed
+        numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
+        NumeroVisual.setText("0");
+        operacion = 1;
+    }//GEN-LAST:event_SumaActionPerformed
+
+    private void RestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestaActionPerformed
+        numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
+        NumeroVisual.setText("0");
+        operacion = 2;
+    }//GEN-LAST:event_RestaActionPerformed
+        
+    private void DivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisionActionPerformed
+        numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
+        NumeroVisual.setText("0");
+        operacion = 3;
+    }//GEN-LAST:event_DivisionActionPerformed
+
+    private void MultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiplicacionActionPerformed
+        numero = calcu.decimalizar(NumeroVisual.getText(), basenueva);
+        NumeroVisual.setText("0");
+        operacion = 4;
+    }//GEN-LAST:event_MultiplicacionActionPerformed
 
     /**
      * @param args the command line arguments
