@@ -55,7 +55,7 @@ public class BasesNumericas {
      *
      * @return valor
      */
-    public int getValor() {
+    public int[] getValor() {
         return valor;
     }
 
@@ -65,7 +65,7 @@ public class BasesNumericas {
      *
      * @param valor int
      */
-    public void setValor(int valor) {
+    public void setValor(int valor[]) {
         this.valor = valor;
     }
 
@@ -74,14 +74,38 @@ public class BasesNumericas {
      * los valores de tiempo recibidos ajustandolos a un formato logico para la
      * visualizacion del ususario
      *
+     * @param numeroVisualizado
      * @return ValorFormateado
      */
-    public String obtenerValorFormateado() {
-        if (this.valor < 10 && this.tope > 10) {
-            return "0" + this.valor;
-        } else {
-            return String.valueOf(this.valor);
+    public String obtenerValorFormateado(String numeroVisualizado, int base) {
+        switch (base) {
+            case 1:
+                for(int a=tope; a>-1;a--){
+                numeroVisualizado = ;
+                }
+                break;
+            case 2:
+                for(int a=tope; a>-1;a--){
+                numeroVisualizado = ;
+                }
+                break;
+            case 3:
+                for(int a=tope; a>-1;a--){
+                numeroVisualizado = ;
+                }
+                break;
+            default:
+                for(int a=tope; a>-1;a--){
+                numeroVisualizado = ;
+                }
+                break;
         }
+        return numeroVisualizado;
+        //if (this.valor < 10 && this.tope > 10) {
+        //    return "0" + this.valor;
+        //} else {
+        //    return String.valueOf(this.valor);
+        //}
     }
 
     /**

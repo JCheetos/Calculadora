@@ -113,7 +113,11 @@ public class Calculadora {
         }
         return numeroVisualizado;
     }
-    public int recibirNumero(String numeroVisualizado, int base,int numero) {
+    public void recibirNumero(String numeroVisualizado, int base,int numero) {
+        char[] arrayChar = numeroVisualizado.toCharArray();
+        for(int i=0; i<arrayChar.length; i++){
+        arrayChar[i]=arrayChar[i]-1;
+        }
         switch (base) {
             case 1:
                 
@@ -128,24 +132,30 @@ public class Calculadora {
                 
                 break;
         }
-        return numeroVisualizado;
     }
-    public String NumeroEnPantalla(String numeroVisualizado, int base,int numero) {
-        switch (base) {
-            case 1:
-                
-                break;
-            case 2:
-                
-                break;
-            case 3:
-                
-                break;
-            default:
-                
-                break;
+    public String NumeroEnPantalla(String numeroVisualizado,int numero) {
+        if((numero>-1)&(numero<10)){
+            return numeroVisualizado+numero;
         }
-        return numeroVisualizado;
+        else if (numero==10){
+            return numeroVisualizado+"A";
+        }
+        else if (numero==11){
+            return numeroVisualizado+"B";
+        }
+        else if (numero==12){
+            return numeroVisualizado+"C";
+        }
+        else if (numero==13){
+            return numeroVisualizado+"D";
+        }
+        else if (numero==14){
+            return numeroVisualizado+"E";
+        }
+        else{
+            return numeroVisualizado+"F";
+        }
     }
+    
 }
 
