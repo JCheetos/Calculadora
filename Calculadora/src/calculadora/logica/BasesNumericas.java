@@ -15,7 +15,7 @@ package calculadora.logica;
 public class BasesNumericas {
 
     private int tope;
-    private int valor[];
+    private int valor;
 
     /**
      * Constructor de la clase
@@ -24,15 +24,7 @@ public class BasesNumericas {
      */
     public BasesNumericas(int tope) {
         this.tope = tope;
-        this.valor[0] = 0;
-        this.valor[1] = 0;
-        this.valor[3] = 0;
-        this.valor[4] = 0;
-        this.valor[5] = 0;
-        this.valor[6] = 0;
-        this.valor[7] = 0;
-        this.valor[8] = 0;
-        this.valor[9] = 0;
+        this.valor = 0;
     }
 
     /**
@@ -136,27 +128,5 @@ public class BasesNumericas {
             valor = tope - 1;
         }
     }
-    public int decimalizar(String numeroVisualizado, int base) {
-        int numerodecimal;
-        numerodecimal = 0;
-        char[] arrayChar = numeroVisualizado.toCharArray();
-        retroceder();
-        for(int i=0; i<arrayChar.length; i++){
-            switch (base) {
-            case 1:
-                
-                break;
-            case 2:
-                
-                break;
-            case 3:
-                
-                break;
-            default:
-                
-                break;
-        }
-        }
-        return numerodecimal;
-    }
+    
 }
