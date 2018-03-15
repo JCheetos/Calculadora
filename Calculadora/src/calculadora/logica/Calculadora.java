@@ -3,6 +3,7 @@
  * Copyright (c) 2018 Valentina Tobo 20172020063, Camilo Torres 20172020067, Johan Mendez 20172020070
  */
 package calculadora.logica;
+import  java.lang.Integer;
 
 /**
  * La clase Calculadora define y maneja las variables necesarias para el
@@ -19,7 +20,7 @@ public class Calculadora {
     private BasesNumericas binario;
     private BasesNumericas decimal;
     private BasesNumericas octal;
-    private BasesNumericas hexagesimal;
+    private BasesNumericas hexadecimal;
 
     public Calculadora() {
         numeroVisualizado = "0";
@@ -27,7 +28,7 @@ public class Calculadora {
         binario = new BasesNumericas(2);
         decimal = new BasesNumericas(10);
         octal = new BasesNumericas(8);
-        hexagesimal = new BasesNumericas(16);
+        hexadecimal = new BasesNumericas(16);
     }
 
     /**
@@ -91,64 +92,44 @@ public class Calculadora {
     }
 
     /**
-     * La funcion se encarga de retornar el valor del hexagesimal del objeto
+     * La funcion se encarga de retornar el valor del hexadecimal del objeto
      * tipo Calculadora del cual es llamada
      *
      * @return hexagesimal
      */
-    public BasesNumericas getHexagesimal() {
-        return hexagesimal;
+    public BasesNumericas getHexadecimal() {
+        return hexadecimal;
     }
 
     /**
-     * La funcion se encarga de definir el valor del hexagesimal del objeto tipo
+     * La funcion se encarga de definir el valor del hexadecimal del objeto tipo
      * Calculadora del cual es llamado
      *
-     * @param hexagesimal
+     * @param hexadecimal
      */
-    public void setHexagesimal(BasesNumericas hexagesimal) {
-        this.hexagesimal = hexagesimal;
+    public void setHexadecimal(BasesNumericas hexadecimal) {
+        this.hexadecimal = hexadecimal;
     }
 
     public String actualizarNumero(String numeroVisualizado, int basea, int basen) {
         numeroGuardado = decimalizar(numeroVisualizado, basea);
         switch (basen) {
             case 1:
-                numeroVisualizado = binario.obtenerValorFormateado(numeroVisualizado, basen);
+                numeroVisualizado = Integer.toBinaryString(numeroGuardado);
                 break;
             case 2:
-                numeroVisualizado = decimal.obtenerValorFormateado(numeroVisualizado, basen);
+                numeroVisualizado = String.valueOf(numeroGuardado);
                 break;
             case 3:
-                numeroVisualizado = octal.obtenerValorFormateado(numeroVisualizado, basen);
+                numeroVisualizado = Integer.toOctalString(numeroGuardado);
                 break;
             default:
-                numeroVisualizado = hexagesimal.obtenerValorFormateado(numeroVisualizado, basen);
+               numeroVisualizado = Integer.toHexString(numeroGuardado);
                 break;
         }
         return numeroVisualizado;
     }
 
-    public void recibirNumero(String numeroVisualizado, int base, int numero) {
-        char[] arrayChar = numeroVisualizado.toCharArray();
-        for (int i = 0; i < arrayChar.length; i++) {
-            arrayChar[i] = arrayChar[i] - 1;
-        }
-        switch (base) {
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-            case 3:
-
-                break;
-            default:
-
-                break;
-        }
-    }
 
     public String NumeroEnPantalla(String numeroVisualizado, int numero) {
 
@@ -177,6 +158,79 @@ public class Calculadora {
     }
 
     public int decimalizar(String numeroVisualizado, int base) {
+        int numerodecimal;
+        int exponente;
+        numerodecimal = 0;
+        char[] arrayChar = numeroVisualizado.toCharArray();
+        for (int i = 0; i < arrayChar.length; i++) {
+            exponente = arrayChar.length - (i + 1);
+            switch (base) {
+                case 1:
+                    numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(2, exponente));
+                    break;
+                case 2:
+                    numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(10, exponente));
+                    break;
+                case 3:
+                    numerodecimal = numerodecimal + (arrayChar[i] * (int) Math.pow(8, exponente));
+                    break;
+                case 4:
+                    switch (arrayChar[i]) {
+                        case 'A':
+                            numerodecimal = numerodecimal + (10 * (int) Math.pow(16, exponente));
+                            break;
+                        case 'B':
+                            numerodecimal = numerodecimal + (11 * (int) Math.pow(16, exponente));
+                            break;
+                        case 'C':
+                            numerodecimal = numerodecimal + (12 * (int) Math.pow(16, exponente));
+                            break;
+                        case 'D':
+                            numerodecimal = numerodecimal + (13 * (int) Math.pow(16, exponente));
+                            break;
+                        case 'E':
+                            numerodecimal = numerodecimal + (14 * (int) Math.pow(16, exponente));
+                            break;
+                        case 'F':
+                            numerodecimal = numerodecimal + (15 * (int) Math.pow(16, exponente));
+                            break;
+                        case '1':
+                            numerodecimal = numerodecimal + (1 * (int) Math.pow(16, exponente));
+                            break;
+                        case '2':
+                            numerodecimal = numerodecimal + (2 * (int) Math.pow(16, exponente));
+                            break;
+                        case '3':
+                            numerodecimal = numerodecimal + (3 * (int) Math.pow(16, exponente));
+                            break;
+                        case '4':
+                            numerodecimal = numerodecimal + (4 * (int) Math.pow(16, exponente));
+                            break;
+                        case '5':
+                            numerodecimal = numerodecimal + (5 * (int) Math.pow(16, exponente));
+                            break;
+                        case '6':
+                            numerodecimal = numerodecimal + (6 * (int) Math.pow(16, exponente));
+                            break;
+                        case '7':
+                            numerodecimal = numerodecimal + (7 * (int) Math.pow(16, exponente));
+                            break;
+                        case '8':
+                            numerodecimal = numerodecimal + (8 * (int) Math.pow(16, exponente));
+                            break;
+                        case '9':
+                            numerodecimal = numerodecimal + (9 * (int) Math.pow(16, exponente));
+                            break;
+                        case '0':
+                            break;
+                    }
+                    break;
+            }
+        }
+        System.out.println(numerodecimal);
+        return numerodecimal;
+    }
+    public int obtenerValorFormateado(int numeroGuardado, int base) {
         int numerodecimal;
         int exponente;
         numerodecimal = 0;
